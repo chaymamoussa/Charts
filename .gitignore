@@ -13,6 +13,7 @@ yarn-error.log
 
 # IDEs and editors
 .idea/
+.vscode/
 .project
 .classpath
 .c9/
@@ -40,3 +41,15 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# dependencies
+/node_modules
+/dist
+
+#build files
+/e2e/*.js
+/e2e/*.map
+/src/test.ts
+/src/polyfills.ts
+/src/styles.css
+/src/environments
