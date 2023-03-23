@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from 'src/app/models/chart.model';
 import { AppService } from 'src/app/app.service';
+import { toLineChartData } from 'src/app/utilities/chart-utils';
 
 @Component({
   selector: 'ds-my-doughnut-chart',
@@ -12,7 +13,7 @@ export class MyDoughnutChartComponent implements OnInit {
   constructor(private readonly appService:AppService) { }
 
   ngOnInit(): void {this.appService.getChartData().subscribe((data: Data) => {
-    this.doughnutChartData = data;
+    this.doughnutChartData = toLineChartData(data);
   })};
 }
 

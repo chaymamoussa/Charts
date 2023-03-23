@@ -1,13 +1,14 @@
-<div>
+<div *ngIf="barChartData | async as barChartData ; else loggedOut">
   <div style="display: block">
     <canvas baseChart
     [type]="'bar'"
-    [datasets]="barChartData.datasets"
     [labels]="barChartData.labels"
+    [datasets]="barChartData.datasets"
     [options]="{ responsive: true, maintainAspectRatio: false}"
-
     >
     </canvas>
-
   </div>
 </div>
+<ng-template #loggedOut>
+  loading...
+</ng-template>

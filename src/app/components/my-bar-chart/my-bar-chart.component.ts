@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {  Data } from 'src/app/models/chart.model';
+import { Component, OnInit} from '@angular/core';
+import {  Data, chartData } from 'src/app/models/chart.model';
 import { AppService } from 'src/app/app.service';
+import { toLineChartData } from 'src/app/utilities/chart-utils';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'ds-my-bar-chart',
   templateUrl: './my-bar-chart.component.html',
@@ -8,15 +10,15 @@ import { AppService } from 'src/app/app.service';
 })
 export class MyBarChartComponent implements OnInit {
 
-  public barChartData!: Data;
+  public barChartData!: Observable<Data>;
 
   constructor(private readonly appService:AppService) {
+
 
    }
 
   ngOnInit(): void {
-    this.appService.getChartData().subscribe((data: Data) => {
-      this.barChartData = data;
-    });}
+    this.barChartData = this.appService.getChartData();}
+
 
 }
