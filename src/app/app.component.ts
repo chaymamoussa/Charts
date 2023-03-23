@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { AppService } from './app.service';
-import { Data, YData } from './models/data';
+import { Data, chartData } from './models/chart.model';
 
 @Component({
   selector: 'ds-root',
@@ -18,21 +18,21 @@ export class AppComponent {
   constructor(private appService: AppService) {}
 
   ngOnInit() {
-    this.appService.get().then((data: Data) => {
+    /*this.appService.get().then((data: Data) => {
       this.lineChartData = this.toLineChartData(data);
-    });
+    });*/
   }
 
   public toLineChartData(data: Data): any {
     return {
-      labels: data.x,
-      datasets: data.y.map((i) => this.toDataSet(i)),
+      labels: data.labels,
+      datasets: data.datasets.map((i) => this.toDataSet(i)),
     };
   }
 
-  public toDataSet(y: YData): any {
+  public toDataSet(y: chartData): any {
     return {
-      data: y.items,
+      data: y.data,
       label: y.label,
       fill: true,
       tension: 0.5,

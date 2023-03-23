@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MyBarChartComponent } from './my-bar-chart/my-bar-chart.component';
-import { MyDoughnutChartComponent } from './my-doughnut-chart/my-doughnut-chart.component';
-import { MyPieChartComponent } from './my-pie-chart/my-pie-chart.component';
-import { MyRadarChartComponent } from './my-radar-chart/my-radar-chart.component';
+import { MyBarChartComponent } from './components/my-bar-chart/my-bar-chart.component';
+import { MyDoughnutChartComponent } from './components/my-doughnut-chart/my-doughnut-chart.component';
+import { MyPieChartComponent } from './components/my-pie-chart/my-pie-chart.component';
+import { MyRadarChartComponent } from './components/my-radar-chart/my-radar-chart.component';
 
 
 const routes : Routes = [
