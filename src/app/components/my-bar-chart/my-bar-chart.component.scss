@@ -1,0 +1,7 @@
+.spinner-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999; /* Set a high z-index to ensure the spinner is always on top */
+  display: block; /* Ensure the element is rendered as a block-level element */
+}

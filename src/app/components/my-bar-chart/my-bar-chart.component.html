@@ -1,15 +1,20 @@
-<div *ngIf="barChartData | async as barChartData ; else loading">
+
+<ng-container *ngIf="(barChartData | async) as chartData; else loading">
   <div style="display: block">
     <canvas baseChart
-    [type]="'bar'"
-    [labels]="barChartData.labels"
-    [datasets]="barChartData.datasets"
-    [options]="{ responsive: true, maintainAspectRatio: false}"
-    >
-    </canvas>
+      [type]="'bar'"
+      [labels]="chartData.labels"
+      [datasets]="chartData.datasets"
+      [options]="{ responsive: true, maintainAspectRatio: false}"
+    ></canvas>
   </div>
-</div>
+
+</ng-container>
 
 <ng-template #loading>
-  <mat-progress-spinner diameter="50"></mat-progress-spinner>
+  <div class="spinner-container">
+    <i class="fas fa-spinner fa-spin"></i>
+  </div>
 </ng-template>
+
+
