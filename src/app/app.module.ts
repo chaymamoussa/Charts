@@ -9,11 +9,12 @@ import { MyBarChartComponent } from './components/my-bar-chart/my-bar-chart.comp
 import { MyDoughnutChartComponent } from './components/my-doughnut-chart/my-doughnut-chart.component';
 import { MyPieChartComponent } from './components/my-pie-chart/my-pie-chart.component';
 import { MyRadarChartComponent } from './components/my-radar-chart/my-radar-chart.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
   declarations: [AppComponent, MyBarChartComponent, MyDoughnutChartComponent, MyPieChartComponent, MyRadarChartComponent],
-  imports: [BrowserModule, AppRoutingModule, NgChartsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, NgChartsModule, HttpClientModule, MatProgressSpinnerModule,],
   providers: [],
   bootstrap: [AppComponent],
 })

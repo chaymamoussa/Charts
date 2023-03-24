@@ -1,4 +1,4 @@
-<div *ngIf="barChartData | async as barChartData ; else loggedOut">
+<div *ngIf="barChartData | async as barChartData ; else loading">
   <div style="display: block">
     <canvas baseChart
     [type]="'bar'"
@@ -9,6 +9,7 @@
     </canvas>
   </div>
 </div>
-<ng-template #loggedOut>
-  loading...
+
+<ng-template #loading>
+  <mat-progress-spinner diameter="50"></mat-progress-spinner>
 </ng-template>
